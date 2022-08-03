@@ -1,0 +1,251 @@
+/* ---------------------- */
+/* Fonts                  */
+/* ---------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+/* ---------------------- */
+/* Custom properties      */
+/* ---------------------- */
+
+:root {
+  --clr-button: #4d5b9e;
+  --clr-button-lighter: #d6dbf5;
+  --crl-text: #293264;
+  --clr-background: #f5f7fb;
+  --clr-accent: #fffad1;
+
+  --ff-main: "Inter", sans-serif;
+  --ff-heading: "Karla", sans-serif;
+}
+
+/* ---------------------- */
+/* Reset                  */
+/* ---------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------- */
+/* Typography             */
+/* ---------------------- */
+
+html {
+  font-family: var(--ff-main);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-heading);
+}
+
+/* ---------------------- */
+/* SVG                    */
+/* ---------------------- */
+
+.blobBL {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 10vw;
+}
+
+.blobTR {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15vw;
+}
+
+/* ---------------------- */
+/* Components             */
+/* ---------------------- */
+
+/* APP */
+
+.app-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--crl-text);
+  background-color: var(--clr-background);
+  min-height: 100vh;
+  padding-top: 1em;
+}
+
+.app-title {
+  filter: drop-shadow(0px 4px 4px rgba(41, 50, 100, 0.25));
+  font-weight: 700;
+}
+
+.app-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 19px;
+  margin: 0.5em 0 1.5em 0;
+  text-align: center;
+}
+
+.btn-container {
+  width: min(80%, 45rem);
+  margin-block: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.score {
+  margin-inline: 1em;
+}
+
+.score-number {
+  color: green;
+}
+
+/* Button */
+
+.btn {
+  border: none;
+  background-color: var(--clr-button);
+  padding: 1em 4em;
+  color: var(--clr-background);
+  border-radius: 100vmax;
+  font-family: var(--ff-main);
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+
+.btn:focus-visible,
+.btn:hover {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 2px rgba(77, 91, 158, 0.5);
+}
+
+.btn:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+/* QUESTION */
+
+.question {
+  width: min(80%, 45rem);
+  margin-block: 0.5em;
+  border-bottom: 1px solid var(--clr-button-lighter);
+}
+
+.question-title {
+  text-align: left;
+}
+
+.container-answers {
+  display: flex;
+  column-gap: 1em;
+  margin: 0.5em 0 1em 0;
+}
+
+/* ANSWER */
+
+.answer {
+  border-radius: 100vmax;
+  border: 1px solid var(--clr-button);
+  padding: 0.5em 1em;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* force div contents to stay in one line */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 1.25em 2.25em;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--clr-button);
+  color: var(--clr-background);
+}
+
+.footer a {
+  color: var(--clr-accent);
+}
+
+/* ---------------------- */
+/* Auxiliary Classes      */
+/* ---------------------- */
+
+/* Underline animation classes */
+
+.underline-animation {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-animation:hover,
+.underline-animation:focus {
+  color: var(--clr-accent);
+}
+
+.underline-animation::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--clr-accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.underline-animation:hover::before,
+.underline-animation:focus::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ---------------------- */
+/* Media queries          */
+/* ---------------------- */
+
+@media screen and (max-width: 768px) {
+  .container-answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 0.5em;
+  }
+}

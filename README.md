@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Scrimba - Quizzical Trivia solution
+
+This is a solution to the [Quizzical Trivia project on Scrimba](https://scrimba.com/learn/learnreact/). Scrimba helps you improve your coding skills by building realistic projects.
+
+## Table of contents
+
+- [Overview](#overview)
+  - [Requirements](#requirements)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+  - [Getting Started with Create React App](#getting-started-with-create-react-app)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Credits](#credits)
+
+## Overview
+
+### Requirements
+
+- Two screen (start & questions)
+- Pull 4 questions from the [OTDB API](https://opentdb.com/)
+- Tally correct answers after "Check answer" is clicked
+- Styled & polished
+
+### Screenshot
+
+![screenshot](/src/screenshots/screenshot.png)
+
+### Links
+
+- Live Site URL: [@Netlify](https://quizzical-trivia-xdelmo.netlify.app/)
+- Solution URL: [@GitHub](https://github.com/xdelmo/quizzical-trivia)
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## My process
 
-In the project directory, you can run:
+### Built with
 
-### `npm start`
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid Layout
+- React.JS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Continued development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I'd like to:
 
-### `npm test`
+- Deny check answers without being all selected
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Useful resources
 
-### `npm run build`
+- [ReactJS](https://reactjs.org/tutorial/tutorial.html) - How to set up a local development environment on your computer
+- [ReactJS](https://it.reactjs.org/docs/faq-functions.html) - How do I bind a function to a component instance?
+- [Confetti @Github](https://github.com/alampros/react-confetti)
+- [StackOverflow](https://stackoverflow.com/questions/5232310/how-can-i-force-div-contents-to-stay-in-one-line-with-html-and-css) - How to force div's contents to stay in one line
+- [logrocket](https://blog.logrocket.com/using-dangerouslysetinnerhtml-in-a-react-application/)
+- [apestruy](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7) - Shuffling an array in Javascript
+- [sebhastian](https://sebhastian.com/fisher-yates-shuffle-javascript/) - Better way to shuffle arrays (Fisher-Yates algorithm)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Author
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Website - [Emanuele Del Monte](https://www.emanueledelmonte.it)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Credits
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [OpenTDB](https://opentdb.com/) - APIs
