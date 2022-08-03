@@ -60,7 +60,7 @@ I'd like to:
 - [ReactJS](https://it.reactjs.org/docs/faq-functions.html) - How do I bind a function to a component instance?
 - [Confetti @Github](https://github.com/alampros/react-confetti)
 - [StackOverflow](https://stackoverflow.com/questions/5232310/how-can-i-force-div-contents-to-stay-in-one-line-with-html-and-css) - How to force div's contents to stay in one line
-- [logrocket](https://blog.logrocket.com/using-dangerouslysetinnerhtml-in-a-react-application/)
+- [logrocket](https://blog.logrocket.com/using-dangerouslysetinnerhtml-in-a-react-application/) - Using dangerouslySetInnerHTML in a React application
 - [apestruy](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7) - Shuffling an array in Javascript
 - [sebhastian](https://sebhastian.com/fisher-yates-shuffle-javascript/) - Better way to shuffle arrays (Fisher-Yates algorithm) -[StackOverflow](https://stackoverflow.com/questions/65321359/how-to-fix-warning-function-makes-the-dependencies-of-useeffect-hook-change) - How to fix warning "function -- makes the dependencies of useEffect Hook change on every render
 
