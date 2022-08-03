@@ -1,6 +1,6 @@
 # Scrimba - Quizzical Trivia solution
 
-This is a solution to the [Quizzical Trivia project on Scrimba](https://scrimba.com/learn/learnreact/). Scrimba helps you improve your coding skills by building realistic projects.
+This is a solution to the [Quizzical Trivia solo project on Scrimba](https://scrimba.com/learn/learnreact/). Scrimba helps you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
