@@ -50,42 +50,42 @@ export default function App() {
         //    }
         // ]
 
+        // listOfQuestions and so question are made as results in fetch data (look at useEffect)
+        function getNewQuestions(listOfQuestions) {
+          // Create a new array which contains API results
+          const resetQuestions = listOfQuestions.map((question) => {
+            return {
+              // For every question create a new object
+              id: nanoid(),
+              question: question.question,
+              correctAnswer: question.correct_answer,
+
+              answers: settingAnswers(
+                // Shuffle answers
+                // ...question.incorrect_answers to get single answer
+                // to pass to shuffleAnswers an array like
+                // [incorrect_answers1, incorrect_answers2, incorrect_answers3, correct_answer]
+                // !IMPORTANT
+                // If you don't deconstruct question.incorrect_answers
+                // you will get an array like
+                // [incorrect_answers1incorrect_answers2incorrect_answers3, correct_answer]
+                shuffleAnswers([
+                  ...question.incorrect_answers,
+                  question.correct_answer,
+                ]),
+                // Pass to settingAnswers all the 4 shuffled answers and the correct one to compare it to them
+                // and set correct value to true to only one
+                question.correct_answer
+              ),
+            };
+          });
+          return resetQuestions;
+        }
+
         // setQuestions with data.results after being manipulated by getNewQuestions
         setQuestions(getNewQuestions(data.results));
       });
   }, [game]);
-
-  // listOfQuestions and so question are made as results in fetch data (look at useEffect)
-  function getNewQuestions(listOfQuestions) {
-    // Create a new array which contains API results
-    const resetQuestions = listOfQuestions.map((question) => {
-      return {
-        // For every question create a new object
-        id: nanoid(),
-        question: question.question,
-        correctAnswer: question.correct_answer,
-
-        answers: settingAnswers(
-          // Shuffle answers
-          // ...question.incorrect_answers to get single answer
-          // to pass to shuffleAnswers an array like
-          // [incorrect_answers1, incorrect_answers2, incorrect_answers3, correct_answer]
-          // !IMPORTANT
-          // If you don't deconstruct question.incorrect_answers
-          // you will get an array like
-          // [incorrect_answers1incorrect_answers2incorrect_answers3, correct_answer]
-          shuffleAnswers([
-            ...question.incorrect_answers,
-            question.correct_answer,
-          ]),
-          // Pass to settingAnswers all the 4 shuffled answers and the correct one to compare it to them
-          // and set correct value to true to only one
-          question.correct_answer
-        ),
-      };
-    });
-    return resetQuestions;
-  }
 
   // Setup all answers (get 4 answers from listOfAnswers and 1 from correctAnswer)
   function settingAnswers(listOfAnswers, correctAnswer) {
