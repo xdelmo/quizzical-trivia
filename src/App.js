@@ -22,6 +22,7 @@ export default function App() {
     setGame((prevState) => !prevState);
     setChecked(false);
     setScore(0);
+    setAllAnswersHeld(false);
   }
 
   // Fetch APIs from OPENTDB
@@ -105,10 +106,6 @@ export default function App() {
 
   // Fisher-Yates algorithm to shuffle (best one)
   function shuffleAnswers(answerList) {
-    console.log(
-      "🚀 ~ file: App.js ~ line 104 ~ shuffleAnswers ~ answerList",
-      answerList
-    );
     let i = answerList.length;
     while (--i > 0) {
       let randIndex = Math.floor(Math.random() * (i + 1));
@@ -207,6 +204,50 @@ export default function App() {
     setChecked(true);
   }
 
+  // State to deny users to check answers without being all selected
+  const [allAnswersHeld, setAllAnswersHeld] = React.useState(false);
+
+  React.useEffect(() => {
+    let answersHeld = [];
+
+    // questions -> question -> answers -> answer
+    //    answer = {
+    //         "id": "hnGreNlrMdnKlpRRJ_z8U",
+    //         "isHeld": false,
+    //         "answer": "Pythagoras",
+    //         "correct": false,
+    //         "heldCorrect": false,
+    //         "heldIncorrect": false,
+    //         "checked": false
+    //     }
+
+    questions.map((question) => {
+      question.answers.map((answer) => {
+        if (answer.isHeld) {
+          // if one answer in answers array has isHeld as true
+          // Push boolean value to answersHeld
+          answersHeld.push(answer.isHeld);
+
+          // Dynamically setAllAnswersHeld If answersHeld array has 4 value (so 4 selected answers) or not
+          answersHeld.length === 4
+            ? setAllAnswersHeld(true)
+            : setAllAnswersHeld(false);
+        }
+        return answer;
+      });
+      return questions;
+    });
+  }, [questions]);
+
+  let buttonStyles = {};
+  // Dynamically change style to Check answers button
+  if (!allAnswersHeld) {
+    buttonStyles = {
+      backgroundColor: "#d6dbf5",
+      color: "#293264",
+    };
+  }
+
   return (
     <div className="app">
       <main className="main">
@@ -244,8 +285,16 @@ export default function App() {
                   </button>
                 </div>
               ) : (
-                <button onClick={checkAnswers} className="btn btn-main">
-                  Check answers
+                // Button disabled and with different style if all 4 answers aren't selected
+                <button
+                  disabled={!allAnswersHeld}
+                  onClick={checkAnswers}
+                  className="btn btn-main"
+                  style={buttonStyles}
+                >
+                  {allAnswersHeld
+                    ? "Check answers"
+                    : "Please select all 4 answers"}
                 </button>
               )}
             </div>

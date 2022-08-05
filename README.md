@@ -52,7 +52,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 I'd like to:
 
-- Deny check answers without being all selected
+- ~~Deny check answers without being all selected~~
+- Add loading animation while APIs fetching
 
 ### Useful resources
 
@@ -63,6 +64,7 @@ I'd like to:
 - [logrocket](https://blog.logrocket.com/using-dangerouslysetinnerhtml-in-a-react-application/) - Using dangerouslySetInnerHTML in a React application
 - [apestruy](https://medium.com/@apestruy/shuffling-an-array-in-javascript-8fcbc5ff12c7) - Shuffling an array in Javascript
 - [sebhastian](https://sebhastian.com/fisher-yates-shuffle-javascript/) - Better way to shuffle arrays (Fisher-Yates algorithm) -[StackOverflow](https://stackoverflow.com/questions/65321359/how-to-fix-warning-function-makes-the-dependencies-of-useeffect-hook-change) - How to fix warning "function -- makes the dependencies of useEffect Hook change on every render
+- [StackOverflow](https://stackoverflow.com/questions/41488715/how-to-disable-button-in-react-js) - How to disable button in React.js
 
 ## Author
 
